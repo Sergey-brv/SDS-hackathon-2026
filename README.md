@@ -12,6 +12,7 @@ Before you do anything, read the following steps. it keeps your laptop from free
 Never use pl.read_parquet(). You don't have enough RAM. Use scan_parquet() to create a LazyFrame. This acts as a "plan" rather than a "load."
 
 This takes 0.001 seconds because it doesn't load the data yet
+
 `df_lazy = pl.scan_parquet("data/aisdk-2024-1h.parquet")`
 
 ## Filter Early, Collect Late
