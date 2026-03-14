@@ -46,5 +46,24 @@ These columns specify the exact location of the GPS antenna on the vessel. These
 * **C**: Distance from the Antenna to the **Port** (Left side).
 * **D**: Distance from the Antenna to the **Starboard** (Right side).
 
+### Type of Mobile
+# 📡 AIS Mobile Type Definitions
+
+The `Type of mobile` column identifies the hardware broadcasting the AIS signal.
+
+## The Vessels (Primary Data)
+* **Class A**: The "Big Players"—commercial ships, tankers, and large passenger vessels. They are required by international law to broadcast their position every 2–10 seconds.
+* **Class B**: Smaller vessels like private yachts, fishing boats, and pleasure crafts. These transponders are less powerful and broadcast less frequently than Class A.
+
+## Emergency & Rescue
+* **Search and Rescue Transponder (SART)**: Used to locate a survival craft or distressed vessel. In historical data, these often represent life rafts or training drills.
+* **Emergency PIRB (EPIRB)**: An emergency beacon that alerts rescue services to a ship in serious distress.
+* **Man Overboard Device**: A small, personal transponder attached to a life jacket that triggers if someone falls into the water.
+* **SAR Airborne**: Search-and-rescue aircraft (helicopters or planes). These will show much higher speeds (SOG) than any watercraft.
+
+## Infrastructure & Navigation
+* **Base Station**: Fixed land-based towers that coordinate the AIS network. These **do not move** and should be filtered out if you are calculating ship traffic statistics.
+* **AtoN (Aid to Navigation)**: Digital markers for physical objects like buoys, lighthouses, or wind turbines. They allow ships to "see" hazards on electronic charts in low visibility.
+
 ---
 *Source: MarineCadastre.gov / Danish Maritime Authority 2024 Snapshot*
