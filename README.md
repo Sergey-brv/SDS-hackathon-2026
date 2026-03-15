@@ -1,5 +1,16 @@
 # SDS-hackathon-2026
 
+This hackathon was inspired by adapted from a [data sprint organized at the Copenhagen Center for Social Data Science (SODAS) in February 2025](https://github.com/jsr-p/sodas-data-sprint).
+
+
+# Data Access
+- The dataset is derived from the Danish Maritime Authority (DMA) AIS data repository.
+- Prior to the hackathon, the data from the past 5.5 years was downloaded and bundled into parquet.tar files, a columnar format optimized for high-performance reading 
+  - Can be read with
+    [polars](https://docs.pola.rs/api/python/dev/reference/api/polars.read_parquet.html)
+- The compiled data was shared via a flashdrive for efficiency.
+- AIS data is  a radio system used by ships to broadcast position, speed, and identification and many more meta data to prevent collisions.
+
 # First time handling big data sets
 Before you do anything, read the following steps. it keeps your laptop from freezing and sets the "speed limit".
 
@@ -24,5 +35,5 @@ Good: Only selecting e.g. Latitude, Longitude, and MMSI.
 ## The "Go" Button
 Your code will only actually run when you call .collect(). If it’s still slow, use streaming=True to process the data in small sips.
 
-## Don't run your full analysis on 104 million rows every time. Test your logic on a sample first:
+## Don't run your full analysis on hundreds of millions of rows every time. Test your logic on a sample first:
 `df_sample = df_lazy.head(100_000).collect()`
